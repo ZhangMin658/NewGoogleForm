@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     $('#exhibit-yes').change(function () {
         if ($(this).is(":checked")) {
             $('#exhibit-no').attr('checked', false);

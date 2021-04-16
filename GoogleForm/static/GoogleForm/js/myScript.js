@@ -1,10 +1,11 @@
 var myScript = (function () {
-
     var _defaults = {
         questionTypeMenuArray : ['Dropdown', 'Checkboxes', 'Multiple Choice']
     };
 
     el = {
+        prevButton : myDom.getElById('prevButton'),
+        nextButton : myDom.getElById('nextButton'),
         cancelButton : myDom.getElById('cancelButton'),
         shortTypeQues : myDom.getElById('short'),
         singleTypeQues : myDom.getElById('single'),
@@ -13,8 +14,66 @@ var myScript = (function () {
         formContainer : myDom.getElById('formContainer')
     };
 
+    el.prevButton.click(function(){
+        var showedDivId = $("div.container").not(":hidden").prop("id");
+        $('#nextButton').show();
+        $(".container").each(function() {
+            $(this).hide();
+        });
+        switch (showedDivId) {
+            case "loanInfo":
+                $('#prevButton').hide();
+                $('#firstPage').show();
+                break;
+            case "appendixA":
+                $('#loanInfo').show();
+                break;
+            case "appendixB":
+                $('#appendixA').show();
+                break;
+            case "appendixC":
+                $('#appendixB').show();
+                break;
+            case "appendixD":
+                $('#appendixC').show();
+                break;
+            case "appendixE":
+                $('#appendixD').show();
+                break;
+        }
+    });
+    
+    el.nextButton.click(function(){
+        var showedDivId = $("div.container").not(":hidden").prop("id");
+        $('#prevButton').show();
+        $(".container").each(function() {
+            $(this).hide();
+        });
+        switch (showedDivId) {
+            case "firstPage":
+                $('#loanInfo').show();
+                break;
+            case "loanInfo":
+                $('#appendixA').show();
+                break;
+            case "appendixA":
+                $('#appendixB').show();
+                break;
+            case "appendixB":
+                $('#appendixC').show();
+                break;
+            case "appendixC":
+                $('#appendixD').show();
+                break;
+            case "appendixD":
+                $('#nextButton').hide();
+                $('#appendixE').show();
+                break;
+        }
+    });
+
     el.cancelButton.click(function(){
-        location.href = '/'
+        location.href = '/';
     });
 
     methods = {
