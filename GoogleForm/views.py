@@ -152,3 +152,11 @@ def updateForm(request, form_id):
         form_list = Form.objects.all()
         context = {'form_list': form_list}
         return render(request, 'GoogleForm/index.html', context)
+
+
+@login_required
+def createDoc(request, form_id):
+    form = Form.objects.get(pk=form_id)
+    context = {'form_id': form_id}
+    return render(request, 'GoogleForm/CustomForm/index.html', context)
+        

@@ -1,0 +1,155 @@
+{% extends 'GoogleForm/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="body-pane">
+            <div class="center flex-column">
+                <p class="no-colored pane-header-fontsize">Appendix A</p>
+                <p class="colored pane-header-fontsize">CLOSING FEES AND COSTS</p>
+            </div>
+
+            <div style="margin-top: 20px;">
+                <p class="colored pane-header-fontsize">FEES PAID TO LENDER</p>
+            </div>
+
+            <div class="add-fields-lender-table table-responsive">
+                <!-- <button type="button" class="btn btn-primary mb-3 float-left addColumn">Add New Field</button> -->
+                <table class="table table-bordered">
+                    <thead>
+                        <tr class="text-center" style="width: 100%;">
+                            <!-- <th style="width: 10%;">ID</th> -->
+                            <th style="width: 20%;">$Amount of Fees</th>
+                            <th style="width: 20%;">Description of Fees</th>
+                            <th style="width: 40%;">
+                                <div class="center flex-column">
+                                    <div>Delivery</div>
+                                    <div>(Please select from drop-down menu)</div>
+                                </div>
+                            </th>
+                            <th style="width: 10%;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="lender-paid-table">
+                        <tr class="text-center">
+                            <!-- <td>1</td> -->
+                            <td><input type="text" class="addColumn"></td>
+                            <td><input type="text" class="addColumn"></td>
+                            <td>
+                                <select>
+                                    <option>choose an item</option>
+                                    <option>wire instructions to be provided</option>
+                                    <option>delivery instructions to be provided</option>
+                                    <option>to be net funded</option>
+                                    <option>delivery to lender's address</option>
+                                    <option>free paid outside of closing</option>
+                                    <option>show as credited</option>
+                                    <option>delivery to loan servicer</option>
+                                    <option>payment differed until after closing</option>
+                                </select>
+                            </td>
+                            <td class="center">
+                                <button class="btn btn-danger lender-paid-delete">X</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+            <div style="margin-top: 40px;">
+                <p class="colored pane-header-fontsize">FEESS PAID TO BROKER</p>
+            </div>
+
+            <div class="add-fields-broker-table table-responsive">
+                <!-- <button type="button" class="btn btn-primary mb-3 float-left addColumn">Add New Field</button> -->
+                <table class="table table-bordered">
+                    <thead>
+                        <tr class="text-center" style="width: 100%;">
+                            <!-- <th style="width: 10%;">ID</th> -->
+                            <th style="width: 20%;">$Amount of Fees</th>
+                            <th style="width: 20%;">Description of Fees</th>
+                            <th style="width: 40%;">
+                                <div class="center flex-column">
+                                    <div>Delivery</div>
+                                    <div>(Please select from drop-down menu)</div>
+                                </div>
+                            </th>
+                            <th style="width: 10%;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="broker-paid-table">
+                        <tr class="text-center">
+                            <!-- <td>1</td> -->
+                            <td><input type="text" class="addColumn1"></td>
+                            <td><input type="text" class="addColumn1"></td>
+                            <td>
+                                <select>
+                                    <option>choose an item</option>
+                                    <option>deliver to broker address</option>
+                                    <option>wire instructions to be provided</option>
+                                    <option>delivery instructions to be provided</option>
+                                    <option>to be net funded</option>
+                                    <option>delivery to lender's address</option>
+                                    <option>free paid outside of closing</option>
+                                    <option>show as credited</option>
+                                    <option>delivery to loan servicer</option>
+                                    <option>payment differed until after closing</option>
+                                </select>
+                            </td>
+                            <td class="center">
+                                <button class="btn btn-danger broker-paid-delete">X</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="margin-top: 40px;">
+                <p class="colored pane-header-fontsize">FEES PAID TO OTHERS</p>
+            </div>
+
+            <div class="add-fields-broker-table table-responsive">
+                <!-- <button type="button" class="btn btn-primary mb-3 float-left addColumn">Add New Field</button> -->
+                <table class="table table-bordered">
+                    <thead>
+                        <tr class="text-center" style="width: 100%;">
+                            <!-- <th style="width: 10%;">ID</th> -->
+                            <th style="width: 20%;">$Amount of Fees</th>
+                            <th style="width: 20%;">Description of Fees</th>
+                            <th style="width: 40%;">
+                                <div class="center flex-column">
+                                    <div>Delivery</div>
+                                    <div>(Please select from drop-down menu)</div>
+                                </div>
+                            </th>
+                            <th style="width: 10%;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="other-paid-table">
+                        <tr class="text-center">
+                            <!-- <td>1</td> -->
+                            <td><input type="text" class="addColumn2"></td>
+                            <td><input type="text" class="addColumn2"></td>
+                            <td>
+                                <select>
+                                    <option>choose an item</option>
+                                    <option>wire instructions to be provided</option>
+                                    <option>delivery instructions to be provided</option>
+                                    <option>to be net funded</option>
+                                    <option>delivery to lender's address</option>
+                                    <option>free paid outside of closing</option>
+                                    <option>show as credited</option>
+                                    <option>delivery to loan servicer</option>
+                                    <option>payment differed until after closing</option>
+                                </select>
+                            </td>
+                            <td class="center">
+                                <button class="btn btn-danger other-paid-delete">X</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

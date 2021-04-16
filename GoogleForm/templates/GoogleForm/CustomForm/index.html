@@ -1,0 +1,608 @@
+{% extends 'GoogleForm/base.html' %}
+
+{% block content %}
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Google Forms</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><span class="glyphicon glyphicon-user"></span>{{ user }}</a></li>
+          <li><a href="/logout/"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+        </ul>
+      </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="header">
+        {% load staticfiles %}
+        <img src="{% static "GoogleForm/css/images/CustomForm/1.png" %}" alt="GERACI" class="logo">
+        <div class="center">
+            <p class="header-text">LOAN DOCUMENT REQUEST FORM</p>
+        </div>
+    </div>
+
+    <div class="body-pane">
+
+<!--        //Lender-->
+        <div class="pane-header">
+            <p class="colored pane-header-fontsize">LENDER INFORMATION</p>
+            <p class="no-colored pane-header-fontsize">(Add more Lenders on Appendix B)</p>
+        </div>
+
+        <div class="lender-info">
+            <div class="lender-pane">
+                <div class="margin-5 form-input">
+                    <span>
+                    Use Exhibit “A” for Multiple Beneficiaries List?
+                    </span>
+
+                    <div class="exhibit-yes-no">
+                        <div style="margin-left: 5px">
+                            <input type="checkbox" id="exhibit-yes" name="exhibit[]">
+                            <label for="exhibit-yes">Yes</label>
+                        </div>
+
+                        <div style="margin-left: 5px">
+                            <input type="checkbox" id="exhibit-no" name="exhibit[]">
+                            <label for="exhibit-no">No</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="margin-5">
+                    <form>
+                        <div class="form-group form-input">
+                            <label for="lender-name" class="form-label-width">Lender's Name: </label>
+                            <input type="text" id="lender-name" placeholder="Name" class="form-input-width">
+                        </div>
+                    </form>
+                </div>
+                <div class="margin-5">
+                    <form>
+                        <div class="form-group form-input">
+                            <label for="lender-address" class="form-label-width">Lender's Address: </label>
+                            <input type="text" id="lender-address" placeholder="Street" class="form-input-width">
+                        </div>
+                    </form>
+                </div>
+                <div class="margin-5">
+                    <form>
+                        <div class="form-group form-input">
+                            <div>
+                                <input type="text" placeholder="City" id="lender-city" style="width: 100%">
+                            </div>
+                            <div class="form-input-3-divide">
+                                <label for="lender-state" class="form-input-3-divide-label">State: </label>
+                                <input type="text" placeholder="--" id="lender-state" class="form-input-3-divide-input">
+                            </div>
+                            <div class="form-input-3-divide">
+                                <label for="lender-zip" class="form-input-3-divide-label">ZIP: </label>
+                                <input type="text" placeholder="ZIP Code" id="lender-zip" class="form-input-3-divide-input">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="margin-5">
+                    <form>
+                        <div class="form-group form-input">
+                            <label for="lender-country" class="form-label-width">Lender's Country: </label>
+                            <input type="text" placeholder="Country" id="lender-country" class="form-input-width">
+                        </div>
+                    </form>
+                </div>
+                <div class="margin-5">
+                    <form>
+                        <div class="form-group form-input">
+                            <label for="lender-amount" class="form-label-width">Invested Amount: </label>
+                            <input type="text" placeholder="Amount" id="lender-amount" class="form-input-width">
+                        </div>
+                    </form>
+                </div>
+                <div>(leave blank if there is only one lender)</div>
+            </div>
+
+            <div class="lender-pane">
+                <div class="margin-5 form-input">
+                    <spn>Lender is</spn>
+
+                    <div class="exhibit-yes-no lender-right-select">
+                        <div style="margin-left: 10px">
+                            <input type="checkbox" id="lender-individual">
+                            <label for="lender-individual">an Individual</label>
+                        </div>
+                        <div style="margin-left: 10px">
+                            <input type="checkbox" id="lender-multi">
+                            <label for="lender-multi" id="lender-multi-label">Choose an Entity</label>
+                            <select id="lender-select">
+                                <option>Choose an Item</option>
+                                <option value="coporation">Corporation</option>
+                                <option value="general_partnership">General Partnership</option>
+                                <option value="joint_venture">Joint Venture</option>
+                                <option value="limited_partnership">Limited Partnership</option>
+                                <option value="llc">LLC</option>
+                                <option value="partnership">Partnership</option>
+                                <option value="trust">Trust</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="margin-5 lender-organized">
+                    <form>
+                        <div class="form-group form-input">
+                            <label for="lender-organized" class="lender-organized-label-width">Lender was organized or incorporated in the State of </label>
+                            <input type="text" id="lender-organized" placeholder="State" class="lender-organized-input-width">
+                        </div>
+                    </form>
+                </div>
+
+                <div class="margin-5 form-input">
+                    <span>
+                    Is Lender Licensed?
+                    </span>
+
+                    <div class="exhibit-yes-no">
+                        <div style="margin-left: 5px">
+                            <input type="checkbox" id="lender-licensed-yes" name="exhibit[]">
+                            <label for="lender-licensed-yes">Yes</label>
+                        </div>
+
+                        <div style="margin-left: 5px">
+                            <input type="checkbox" id="lender-licensed-no" name="exhibit[]">
+                            <label for="lender-licensed-no">No</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="margin-5" style="margin-top: 20px">
+                    <form>
+                        <div class="form-group form-input">
+                            <label for="license" class="license-label-width">If applicable, Type of License: </label>
+                            <input type="text" id="license" placeholder="License" class="license-number-label-width">
+                        </div>
+                    </form>
+                </div>
+
+                <div class="margin-5">
+                    <form>
+                        <div class="form-group form-input">
+                            <label for="license-number" class="license-label-width">If applicable, License Number:  </label>
+                            <input type="text" id="license-number" placeholder="License Number" class="license-number-label-width">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+<!--        //Broker-->
+        <div class="pane-header">
+            <p class="colored">BROKER INFORMATION</p>
+        </div>
+
+        <div class="lender-info">
+            <div class="lender-pane">
+                <div class="margin-5">
+                    <form>
+                        <div class="form-group form-input">
+                            <label for="broker-name" class="form-label-width">Broker's Name: </label>
+                            <input type="text" id="broker-name" placeholder="Name" class="form-input-width">
+                        </div>
+                    </form>
+                </div>
+                <div class="margin-5">
+                    <form>
+                        <div class="form-group form-input">
+                            <label for="broker-address" class="form-label-width">Broker's Address: </label>
+                            <input type="text" id="broker-address" placeholder="Street" class="form-input-width">
+                        </div>
+                    </form>
+                </div>
+                <div class="margin-5">
+                    <form>
+                        <div class="form-group form-input">
+                            <div>
+                                <input type="text" placeholder="City" id="broker-city" style="width: 100%">
+                            </div>
+                            <div class="form-input-3-divide">
+                                <label for="broker-state" class="form-input-3-divide-label">State: </label>
+                                <input type="text" placeholder="--" id="broker-state" class="form-input-3-divide-input">
+                            </div>
+                            <div class="form-input-3-divide">
+                                <label for="broker-zip" class="form-input-3-divide-label">ZIP: </label>
+                                <input type="text" placeholder="ZIP Code" id="broker-zip" class="form-input-3-divide-input">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="lender-pane">
+                <div class="margin-5 form-input">
+                    <span>
+                    Is Broker Licensed?
+                    </span>
+
+                    <div class="exhibit-yes-no">
+                        <div style="margin-left: 5px">
+                            <input type="checkbox" id="broker-licensed-yes" name="exhibit[]">
+                            <label for="broker-licensed-yes">Yes</label>
+                        </div>
+
+                        <div style="margin-left: 5px">
+                            <input type="checkbox" id="broker-licensed-no" name="exhibit[]">
+                            <label for="broker-licensed-no">No</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="margin-5" style="margin-top: 20px">
+                    <form>
+                        <div class="form-group form-input">
+                            <label for="broker-license" class="license-label-width">If applicable, Type of License: </label>
+                            <input type="text" id="broker-license" placeholder="License" class="license-number-label-width">
+                        </div>
+                    </form>
+                </div>
+
+                <div class="margin-5">
+                    <form>
+                        <div class="form-group form-input">
+                            <label for="broker-license-number" class="license-label-width">If applicable, License Number:  </label>
+                            <input type="text" id="broker-license-number" placeholder="License Number" class="license-number-label-width">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+<!--        //Borrower-->
+        <div class="pane-header">
+            <p class="colored">BORROWER INFORMATION</p>
+            <p class="no-colored">(Add more Borrowers on Appendix C)</p>
+        </div>
+
+        <div class="lender-info">
+            <div class="lender-pane">
+                <div class="margin-5">
+                    <form>
+                        <div class="form-group form-input">
+                            <label for="borrower-name" class="form-label-width">Borrower's Name: </label>
+                            <input type="text" id="borrower-name" placeholder="Name" class="form-input-width">
+                        </div>
+                    </form>
+                </div>
+                <div class="margin-5">
+                    <form>
+                        <div class="form-group form-input">
+                            <label for="borrower-address" class="form-label-width">Borrower's Address: </label>
+                            <input type="text" id="borrower-address" placeholder="Street" class="form-input-width">
+                        </div>
+                    </form>
+                </div>
+                <div class="margin-5">
+                    <form>
+                        <div class="form-group form-input">
+                            <div>
+                                <input type="text" placeholder="City" id="borrower-city" style="width: 100%">
+                            </div>
+                            <div class="form-input-3-divide">
+                                <label for="borrower-state" class="form-input-3-divide-label">State: </label>
+                                <input type="text" placeholder="--" id="borrower-state" class="form-input-3-divide-input">
+                            </div>
+                            <div class="form-input-3-divide">
+                                <label for="borrower-zip" class="form-input-3-divide-label">ZIP: </label>
+                                <input type="text" placeholder="ZIP Code" id="borrower-zip" class="form-input-3-divide-input">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="lender-pane">
+                <div class="margin-5 form-input">
+                    <spn>Borrower is</spn>
+
+                    <div class="exhibit-yes-no lender-right-select">
+                        <div style="margin-left: 10px">
+                            <input type="checkbox" id="borrower-individual">
+                            <label for="borrower-individual">an Individual</label>
+                        </div>
+                        <div style="margin-left: 10px">
+                            <input type="checkbox" id="borrower-multi">
+                            <label for="borrower-multi" id="borrower-multi-label">Choose an Entity</label>
+                            <select id="borrower-select">
+                                <option>Choose an Item</option>
+                                <option value="coporation">Corporation</option>
+                                <option value="general_partnership">General Partnership</option>
+                                <option value="joint_venture">Joint Venture</option>
+                                <option value="limited_partnership">Limited Partnership</option>
+                                <option value="llc">LLC</option>
+                                <option value="partnership">Partnership</option>
+                                <option value="trust">Trust</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="margin-5 borrower-organized" style="margin-top: 20px">
+                    <form>
+                        <div class="form-group form-input">
+                            <label for="borrower-organized" class="lender-organized-label-width">Borrower was organized or incorporated in the State of </label>
+                            <input type="text" id="borrower-organized" placeholder="State" class="lender-organized-input-width">
+                        </div>
+                    </form>
+                </div>
+
+                <div class="margin-5 borrower-individual-select" style="margin-top: 20px">
+                    <label for="borrower-individual-select" class="borrower-select-label">Select Vesting</label>
+                    <select id="borrower-individual-select">
+                        <option>Choose an Item</option>
+                        <option value="coporation">A Single Man (never married)</option>
+                        <option value="general_partnership">A single Woman (never married)</option>
+                        <option value="joint_venture">An unmarried man (divorced)</option>
+                        <option value="limited_partnership">An unmarried woman (divorced)</option>
+                        <option value="llc">A widowed man</option>
+                        <option value="partnership">A widowed woman</option>
+                        <option value="trust">A married man as his sole and separate property</option>
+                        <option value="trust">A married woman as her sole and separate property</option>
+                        <option value="trust">husband and wife as joint tenants</option>
+                        <option value="trust">husband and husband as joint tenants</option>
+                        <option value="trust">wife and wife as joint tenants</option>
+                        <option value="trust">husband and wife as tenants by the entirety</option>
+                        <option value="trust">husband and husband as tenants by the entirety</option>
+                        <option value="trust">wife and wife as tenants by the entirety</option>
+                        <option value="trust">husband and wife as community property</option>
+                        <option value="trust">husband and husband as community property</option>
+                        <option value="trust">wife and wife as community property</option>
+                        <option value="trust">As tenants in common</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+<!--        Guarantor-->
+        <div class="pane-header">
+            <p class="colored">GUARANTOR INFORMATION</p>
+            <p class="no-colored">(Add more Guarantors on Appendix D)</p>
+        </div>
+
+        <div class="lender-info">
+            <div class="lender-pane">
+                <div class="margin-5">
+                    <form>
+                        <div class="form-group form-input">
+                            <label for="guarantor-name" class="form-label-width">Guarantor's Name: </label>
+                            <input type="text" id="guarantor-name" placeholder="Name" class="form-input-width">
+                        </div>
+                    </form>
+                </div>
+                <div class="margin-5">
+                    <form>
+                        <div class="form-group form-input">
+                            <label for="guarantor-address" class="form-label-width">Guarantor's Address: </label>
+                            <input type="text" id="guarantor-address" placeholder="Street" class="form-input-width">
+                        </div>
+                    </form>
+                </div>
+                <div class="margin-5">
+                    <form>
+                        <div class="form-group form-input">
+                            <div>
+                                <input type="text" placeholder="City" id="guarantor-city" style="width: 100%">
+                            </div>
+                            <div class="form-input-3-divide">
+                                <label for="guarantor-state" class="form-input-3-divide-label">State: </label>
+                                <input type="text" placeholder="--" id="guarantor-state" class="form-input-3-divide-input">
+                            </div>
+                            <div class="form-input-3-divide">
+                                <label for="guarantor-zip" class="form-input-3-divide-label">ZIP: </label>
+                                <input type="text" placeholder="ZIP Code" id="guarantor-zip" class="form-input-3-divide-input">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="lender-pane">
+                <div class="margin-5 form-input">
+                    <spn>Guarantor is</spn>
+
+                    <div class="exhibit-yes-no lender-right-select">
+                        <div style="margin-left: 10px">
+                            <input type="checkbox" id="guarantor-individual">
+                            <label for="guarantor-individual">an Individual</label>
+                        </div>
+                        <div style="margin-left: 10px">
+                            <input type="checkbox" id="guarantor-multi">
+                            <label for="guarantor-multi" id="guarantor-multi-label">Choose an Entity</label>
+                            <select id="guarantor-select">
+                                <option>Choose an Item</option>
+                                <option value="coporation">Corporation</option>
+                                <option value="general_partnership">General Partnership</option>
+                                <option value="joint_venture">Joint Venture</option>
+                                <option value="limited_partnership">Limited Partnership</option>
+                                <option value="llc">LLC</option>
+                                <option value="partnership">Partnership</option>
+                                <option value="trust">Trust</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="margin-5 guarantor-organized" style="margin-top: 20px">
+                    <form>
+                        <div class="form-group form-input">
+                            <label for="guarantor-organized" class="lender-organized-label-width">Guarantor was organized or incorporated in the State of </label>
+                            <input type="text" id="guarantor-organized" placeholder="State" class="lender-organized-input-width">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+<!--        Property-->
+        <div class="pane-header">
+            <p class="colored">PROPERTY INFORMATION</p>
+            <p class="no-colored">(Add more Properties on Appendix E)</p>
+        </div>
+
+        <div class="lender-info">
+            <div class="lender-pane">
+                <div class="margin-5" style="width: 100%">
+                    <label for="property1-address">Property1's Address: </label>
+                </div>
+                <div class="margin-5" style="width: 100%">
+                    <input type="text" id="property1-address" placeholder="Street" style="width: 95%">
+                </div>
+                <div class="margin-5" style="margin-top: 20px">
+                    <form>
+                        <div class="form-group form-input">
+                            <div>
+                                <input type="text" placeholder="City" id="property1-city" style="width: 100%">
+                            </div>
+                            <div class="form-input-3-divide">
+                                <label for="property1-state" class="form-input-3-divide-label">State: </label>
+                                <input type="text" placeholder="--" id="property1-state" class="form-input-3-divide-input">
+                            </div>
+                            <div class="form-input-3-divide">
+                                <label for="property1-zip" class="form-input-3-divide-label">ZIP: </label>
+                                <input type="text" placeholder="ZIP Code" id="property1-zip" class="form-input-3-divide-input">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="margin-5 form-input">
+                    <span>
+                    If Property 1 is residential, it it owner-occupied?
+                    </span>
+
+                    <div class="exhibit-yes-no">
+                        <div style="margin-left: 5px">
+                            <input type="checkbox" id="property1-yes" name="exhibit[]">
+                            <label for="property1-yes">Yes</label>
+                        </div>
+
+                        <div style="margin-left: 5px">
+                            <input type="checkbox" id="property1-no" name="exhibit[]">
+                            <label for="property1-no">No</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="margin-5" style="width: 100%; margin-top: 20px">
+                    <label for="property1-lien">If the lien will be subordinate, which liens will remain on title?</label>
+                </div>
+                <div class="margin-5" style="width: 100%">
+                    <input type="text" id="property1-lien" placeholder="Lien's on titles"style="width: 95%">
+                </div>
+                <div class="margin-5" style="margin-top: 20px">
+                    <form>
+                        <div class="form-group form-input">
+                            <label for="property1-type" class="form-label-width">Property1's Type: </label>
+                            <input type="text" placeholder="Type" id="property1-type" class="form-input-width">
+                        </div>
+                    </form>
+                </div>
+                <div class="margin-5">
+                    <form>
+                        <div class="form-group form-input">
+                            <label for="property1-priority" class="form-label-width">Property1 Priority </label>
+                            <select id="property1-priority" class="form-input-width">
+                                <option>Choose a lien position</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="lender-pane">
+                <div class="margin-5" style="width: 100%">
+                    <label for="property2-address">Property2's Address: </label>
+                </div>
+                <div class="margin-5" style="width: 100%">
+                    <input type="text" id="property2-address" placeholder="Street" style="width: 95%">
+                </div>
+                <div class="margin-5" style="margin-top: 20px">
+                    <form>
+                        <div class="form-group form-input">
+                            <div>
+                                <input type="text" placeholder="City" id="property2-city" style="width: 100%">
+                            </div>
+                            <div class="form-input-3-divide">
+                                <label for="property2-state" class="form-input-3-divide-label">State: </label>
+                                <input type="text" placeholder="--" id="property2-state" class="form-input-3-divide-input">
+                            </div>
+                            <div class="form-input-3-divide">
+                                <label for="property2-zip" class="form-input-3-divide-label">ZIP: </label>
+                                <input type="text" placeholder="ZIP Code" id="property2-zip" class="form-input-3-divide-input">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="margin-5 form-input">
+                    <span>
+                    If Property 2 is residential, it it owner-occupied?
+                    </span>
+
+                    <div class="exhibit-yes-no">
+                        <div style="margin-left: 5px">
+                            <input type="checkbox" id="property2-yes" name="exhibit[]">
+                            <label for="property2-yes">Yes</label>
+                        </div>
+
+                        <div style="margin-left: 5px">
+                            <input type="checkbox" id="property2-no" name="exhibit[]">
+                            <label for="property2-no">No</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="margin-5" style="width: 100%; margin-top: 20px">
+                    <label for="property2-lien">If the lien will be subordinate, which liens will remain on title?</label>
+                </div>
+                <div class="margin-5" style="width: 100%">
+                    <input type="text" id="property2-lien" placeholder="Lien's on titles"style="width: 95%">
+                </div>
+                <div class="margin-5" style="margin-top: 20px">
+                    <form>
+                        <div class="form-group form-input">
+                            <label for="property2-type" class="form-label-width">Property2's Type: </label>
+                            <input type="text" placeholder="Type" id="property2-type" class="form-input-width">
+                        </div>
+                    </form>
+                </div>
+                <div class="margin-5">
+                    <form>
+                        <div class="form-group form-input">
+                            <label for="property2-priority" class="form-label-width">Property2 Priority </label>
+                            <select id="property2-priority" class="form-input-width">
+                                <option>Choose a lien position</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

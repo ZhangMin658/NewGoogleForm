@@ -1,0 +1,502 @@
+body {
+    width: 100%;
+}
+
+input[type=text] {
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid #444343;
+}
+
+input[type=text]:focus {
+    box-sizing: border-box;
+    outline: none !important;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+textarea {
+    box-sizing: border-box;
+    border: 2px solid green;
+}
+
+textarea:focus {
+    box-sizing: border-box;
+    border: 2px solid green;
+    outline: green !important;
+}
+
+.table td, .table th {
+    padding: 5px !important;
+    vertical-align: middle !important;
+}
+
+.table>thead>tr>th {
+    border: 2px solid green;
+}
+
+/* .table>tbody>tr>td {
+    border: 2px solid grey;
+} */
+
+.row {
+    margin: 0 !important;
+}
+
+label {
+    margin-bottom: 0 !important;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    margin-top: 10px;
+    border-bottom: 3px grey solid;
+}
+
+.header-text {
+    margin-bottom: 15px !important;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.logo {
+    width: 200px;
+    height: auto;
+}
+
+.body-pane {
+    width: 100%;
+}
+
+.pane-header {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+}
+
+.colored {
+    color: green;
+}
+
+.no-colored {
+    margin-left: 5px;
+}
+
+.pane-header-fontsize {
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 767px) and (min-width: 502px) {
+    .pane-header-fontsize {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 501px) and (min-width: 0px) {
+    .pane-header {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header-text {
+        margin-bottom: 15px !important;
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    .pane-header-fontsize {
+        font-size: 18px;
+    }
+}
+
+.lender-info {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.lender-pane {
+    width: 50%;
+    margin-top: 5px;
+}
+
+.margin-5 {
+    margin-top: 5px;
+}
+
+.form-input {
+    display: flex;
+}
+
+.form-label-width {
+    width: 30%;
+}
+
+.loan-form-label-width {
+    width: 40%;
+}
+
+.loan-form-input-width {
+    width: 55%;
+}
+
+.form-input-width {
+    width: 65%;
+}
+
+.form-input-3-divide-input {
+    width: 70%;
+}
+
+.exhibit-yes-no {
+    display: flex !important;
+}
+
+#lender-select {
+    display: none;
+}
+
+#lender2-select {
+    display: none;
+}
+
+#lender3-select {
+    display: none;
+}
+
+#lender4-select {
+    display: none;
+}
+
+#lender5-select {
+    display: none;
+}
+
+#borrower-select {
+    display: none;
+}
+
+#borrower2-select {
+    display: none;
+}
+
+#borrower3-select {
+    display: none;
+}
+
+#borrower4-select {
+    display: none;
+}
+
+#borrower5-select {
+    display: none;
+}
+
+.lender-organized {
+    display: none;
+}
+
+.lender2-organized {
+    display: none;
+}
+
+.lender3-organized {
+    display: none;
+}
+
+.lender4-organized {
+    display: none;
+}
+
+.lender5-organized {
+    display: none;
+}
+
+.borrower-organized {
+    display: none;
+}
+
+.borrower2-organized {
+    display: none;
+}
+
+.borrower3-organized {
+    display: none;
+}
+
+.borrower4-organized {
+    display: none;
+}
+
+.borrower5-organized {
+    display: none;
+}
+
+.guarantor-organized {
+    display: none;
+}
+
+.guarantor2-organized {
+    display: none;
+}
+
+.guarantor3-organized {
+    display: none;
+}
+
+.guarantor4-organized {
+    display: none;
+}
+
+.guarantor5-organized {
+    display: none;
+}
+
+.borrower-individual-select {
+    display: none;
+}
+
+.borrower2-individual-select {
+    display: none;
+}
+
+.borrower3-individual-select {
+    display: none;
+}
+
+.borrower4-individual-select {
+    display: none;
+}
+
+.borrower5-individual-select {
+    display: none;
+}
+
+#guarantor-select {
+    display: none;
+}
+
+#guarantor2-select {
+    display: none;
+}
+
+#guarantor3-select {
+    display: none;
+}
+
+#guarantor4-select {
+    display: none;
+}
+
+#guarantor5-select {
+    display: none;
+}
+
+.lender-organized-label-width {
+    width: 70%;
+}
+
+.lender-organized-input-width {
+    width: 30%;
+}
+
+.license-label-width {
+    width: 40%;
+}
+
+.license-number-label-width {
+    width: 60%;
+}
+
+@media only screen and (max-width: 991px) and (min-width: 0px) {
+    .lender-info {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .lender-pane {
+        width: 100%;
+    }
+
+    .license-label-width {
+        width: 40%;
+    }
+
+    .license-number-label-width {
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 991px) and (min-width: 768px) {
+    .license-label-width {
+        width: 40%;
+    }
+
+    .license-number-label-width {
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 452px) {
+    .license-label-width {
+        width: 50%;
+    }
+
+    .license-number-label-width {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 451px) and (min-width: 442px) {
+    .license-label-width {
+        width: 60%;
+    }
+
+    .license-number-label-width {
+        width: 40%;
+    }
+}
+
+@media only screen and (max-width: 441px) and (min-width: 0px) {
+    .form-input {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-label-width {
+        width: 100%;
+    }
+
+    .form-input-width {
+        width: 100%;
+    }
+
+    .loan-form-label-width {
+        width: 100%;
+    }
+
+    .loan-form-input-width {
+        width: 100%;
+    }
+
+    .form-input-3-divide {
+        display: flex;
+    }
+
+    .form-input-3-divide-label {
+        width: 30%;
+        margin-top: 10px;
+    }
+
+    .form-input-3-divide-input {
+        width: 70%;
+    }
+
+    .lender-organized-label-width {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .lender-organized-input-width {
+        width: 100%;
+    }
+
+    .license-label-width {
+        width: 100%;
+    }
+
+    .license-number-label-width {
+        width: 100%;
+    }
+
+    #borrower-individual-select {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1199px) and (min-width: 992px) {
+    .lender-organized-label-width {
+        width: 70%;
+    }
+
+    .lender-organized-input-width {
+        width: 25%;
+    }
+
+    .license-label-width {
+        width: 50%;
+    }
+
+    .license-number-label-width {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 293px) and (min-width: 0px) {
+    .lender-right-select {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.loan-number {
+    width: 100%;
+    display: flex;
+}
+
+.loan-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.rates-terms {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.rates-terms-items {
+    margin-top: 5px;
+}
+
+.stepdown-payment {
+    display: none;
+}
+
+.penalty-payment {
+    display: none;
+}
+
+.extension-number {
+    width: 100%;
+    display: none;
+}
+
+.extension-fee {
+    width: 100%;
+    display: none;
+}
+
+.extension-period {
+    width: 100%;
+    display: none;
+}
+
+@media only screen and (max-width: 313px) and (min-width: 0px) {
+    .loan-number {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+}
+

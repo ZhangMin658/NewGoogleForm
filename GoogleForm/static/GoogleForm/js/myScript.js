@@ -5,12 +5,17 @@ var myScript = (function () {
     };
 
     el = {
+        cancelButton : myDom.getElById('cancelButton'),
         shortTypeQues : myDom.getElById('short'),
         singleTypeQues : myDom.getElById('single'),
         multipleTypeQues : myDom.getElById('multiple'),
         quesCount : myDom.getElById('quesCount').val(),
         formContainer : myDom.getElById('formContainer')
     };
+
+    el.cancelButton.click(function(){
+        location.href = '/'
+    });
 
     methods = {
 
@@ -176,4 +181,3 @@ var myScript = (function () {
     };
 
 })();
-
