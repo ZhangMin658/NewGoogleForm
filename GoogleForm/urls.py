@@ -12,8 +12,9 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^signup/$', views.signup, name='signup'),
     url(r'^$', views.index, name='index'),
-    url(r'^(?P<form_id>[0-9]+)/$', views.formDetail, name='formDetail'),
+    url(r'^form/(?P<form_id>[0-9]+)/$', views.formDetail, name='formDetail'),
     url(r'^createForm/$', views.createForm, name='createForm'),
     url(r'^saveForm/$', views.saveForm, name='saveForm'),
-    url(r'^updateForm/(?P<form_id>[0-9]+)/$', views.updateForm, name='updateForm')
+    url(r'^updateForm/(?P<form_id>[0-9]+)/$', views.updateForm, name='updateForm'),
+    # url(r'^form/(?P<form_id>[0-9]+)/createDoc/$', views.createDoc, name='createDoc')
 ]
