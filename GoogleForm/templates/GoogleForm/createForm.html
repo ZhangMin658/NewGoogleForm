@@ -4,7 +4,7 @@
     <div class="page-header form-header text-center">
         <h1>.</h1>
     </div>
-    <form id="main" class="form-container" method="POST" action="{% if form %}/GoogleForm/updateForm/{{ form.id }}/{% else %}/GoogleForm/saveForm/{% endif %}">{% csrf_token %}
+    <form id="main" class="form-container" method="POST" action="{% if form %}/updateForm/{{ form.id }}/{% else %}/saveForm/{% endif %}">{% csrf_token %}
         <div class="row">
             <div class="col-sm-3 left-panel"></div>
             <div class="col-sm-6 mid-panel"  id="formContainer">

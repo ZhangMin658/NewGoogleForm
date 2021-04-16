@@ -64,12 +64,15 @@ def formDetail(request, form_id):
 def createForm(request):
     return render(request, 'GoogleForm/createForm.html')
 
+@login_required
 def saveForm(request):
     if request.method == 'POST':
         form_title = request.POST.get('form_title', '')
         form_desc = request.POST.get('form_description', '')
         ques_count = request.POST.get('ques_count', '')
-        formObj = Form(form_title=form_title, form_description=form_desc, user=request.user, total_ques=ques_count)
+        # modification (2021.04)
+        # formObj = Form(form_title=form_title, form_description=form_desc, user=request.user, total_ques=ques_count)
+        formObj = Form(form_title=form_title, form_description=form_desc, user=request.user)
         formObj.save()
         ques_count_int = int(ques_count)
         for count in range(1, ques_count_int+1):
@@ -95,6 +98,7 @@ def saveForm(request):
         context = {'form_list': form_list}
         return render(request, 'GoogleForm/index.html', context)
 
+@login_required
 def updateForm(request, form_id):
     form = Form.objects.get(pk=form_id)
     total_ques_earlier = int(form.total_ques)

@@ -19,10 +19,10 @@ class Form(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     form_title = models.CharField(max_length=1000)
     form_description = models.CharField(max_length=2000)
-    total_ques = models.CharField(max_length=2000, null=True)
+    # total_question = models.CharField(max_length=2000, null=True)
     def __str__(self):
         return self.form_title
-
+        
 
 @python_2_unicode_compatible  # only if you need to support Python 2
 class Question(models.Model):
